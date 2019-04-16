@@ -75,13 +75,28 @@
                 foreach ($comments as $comment) {
             ?>
 
-            <ul>
-            <li class="single-comment">
+            <ul id="hide">
+            <li  class="single-comment">
                  <div>posted by: <?php echo $comment['author'] ?></div>
                 <div> <?php echo $comment['text'] ?> </div>
             </li>
             <?php } ?>
             </ul>
+            <button id= "button" onclick="hideComment()">Hide comments</button>
+            <script>
+    var comments = document.getElementById('hide')
+    var button = document.getElementById('button')
+    function hideComment(){
+        
+        if(button.innerHTML == "Show Comments"){
+            comments.classList.remove("hide")
+            button.innerHTML = "Hide Comments"
+        } else{
+            comments.className = "hide"
+            button.innerHTML = "Show Comments"
+        }
+    }
+</script>
         </div>
     </div>  
         <?php include 'sidebar.php'?>

@@ -43,3 +43,12 @@ a {
     border-bottom: #b34848 solid 1px;
     
 }
+.hide {
+    display: none;
+}
+#button {
+    background-color: #b34848;
+    border-radius: 20px;
+    padding: 5px;
+    border: black solid 1px;
+}
