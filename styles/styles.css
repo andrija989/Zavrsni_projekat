@@ -13,7 +13,7 @@ html {
 }
 
 
-h1,h2,h3,h4,h5,h6 {
+h1,h2 {
     color: #b34848
 }
 
@@ -29,4 +29,17 @@ a {
 
 .blog-masthead {
     background-color: #b34848;
+}
+.row {
+     display: flex !important;
+}
+.blog-post {
+    width: 70%;
+}
+.col-sm-8-blog-main {
+    width: 75%;
+}
+.single-comment {
+    border-bottom: #b34848 solid 1px;
+    
 }

@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,34 +15,23 @@
 
     <!-- Custom styles for this template -->
     <link href="styles/blog.css" rel="stylesheet">
-
     <link href="styles/styles.css" rel="stylesheet">
 </head>
-
+<?php include 'header.php'?>
 <body>
-
-<header >
-    <?php include 'header.php';?>
-</header>
-
 <main role="main" class="container">
 
     <div class="row">
 
-        <div class="col-sm-8 blog-main">          
-            <?php include 'posts.php'; ?>
-        </div><!-- /.blog-main -->
-
-        <aside class="col-sm-3 ml-sm-auto blog-sidebar">
-            <?php include 'sidebar.php'; ?>
-        </aside><!-- /.blog-sidebar -->
+        <?php include 'posts.php'?>
+        <?php include 'sidebar.php'?>
 
     </div><!-- /.row -->
 
 </main><!-- /.container -->
 
 <footer class="blog-footer">
-    <?php include 'footer.php'; ?>
+   <?php include "footer.php" ?>
 </footer>
 </body>
 </html>
