@@ -13,7 +13,7 @@ html {
 }
 
 
-h1,h2 {
+h1,h2,h3 {
     color: #b34848
 }
 
@@ -58,4 +58,7 @@ a {
 .comment-list-headline {
     padding-bottom: 1rem;
     padding-top: 1rem;
+}
+.sidebar-5-links {
+    display: block;
 }
