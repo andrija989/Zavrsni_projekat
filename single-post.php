@@ -74,6 +74,7 @@
                 $comments = $statement->fetchAll();
                 foreach ($comments as $comment) {
             ?>
+            
 
             <ul id="hide">
             <li  class="single-comment">
