@@ -14,20 +14,18 @@
         echo $e->getMessage();
     }
 
-    if(!empty($_POST['title']) && !empty($_POST['post'] && !empty($_POST['author']))) {
-        $title = $_POST['title'];
-        $post = $_POST['post'];
+    $id = $_POST['id'];
+    if(!empty($_POST['author']) && !empty($_POST['comment'])) {
         $author = $_POST['author'];
-        $date = date('Y-m-d');
-        $sqlInsert = "INSERT INTO posts (title, body, author,created_at) VALUES ('{$title}', '{$post}', '{$author}','$date');";
-        // var_dump($sqlInsert);
+        $comment = $_POST['comment'];
+        $sqlInsert = "INSERT INTO comments (author, text, post_id) VALUES ('{$author}', '{$comment}', {$id});";
         $statementInsert = $connection->prepare($sqlInsert);
         $statementInsert->execute();
         $statementInsert->setFetchMode(PDO::FETCH_ASSOC);
     
-        header("Location: http://localhost:8080/index.php");
+        header("Location: http://localhost:8080/single-post.php?post_id=$id");
     } else {
-        header("Location: http://localhost:8080/create.php?&error=1");
+        header("Location: http://localhost:8080/single-post.php?post_id=$id&error=1");
     }
 ?>
 

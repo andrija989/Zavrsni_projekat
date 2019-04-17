@@ -52,3 +52,10 @@ a {
     padding: 5px;
     border: black solid 1px;
 }
+.form {
+    display: block;
+}
+.comment-list-headline {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
