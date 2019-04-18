@@ -5,7 +5,7 @@
         $title = $_POST['title'];
         $post = $_POST['post'];
         $author = $_POST['author'];
-        $date = date('Y-m-d');
+        $date = date('Y-m-d h:i:s');
         $sqlInsert = "INSERT INTO posts (title, body, author,created_at) VALUES ('{$title}', '{$post}', '{$author}','$date');";
         // var_dump($sqlInsert);
         $statementInsert = $connection->prepare($sqlInsert);

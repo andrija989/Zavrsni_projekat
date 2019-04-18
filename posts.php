@@ -26,10 +26,7 @@
         <h2 class="blog-post-title"><a class="a-index" href="single-post.php?post_id=<?php echo($post['id']) ?>"><?php echo($post['title']) ?></a></h2>
         <p class="blog-post-meta"><?php echo($post['created_at']) ?> by <?php echo($post['author']) ?></p>
         <p><?php echo($post['body']) ?></p>
-        <form method="GET" action="delete-post.php" >
-                <input class="btn btn-default" type="submit" value="Delete post" >
-                <input type="hidden" value="<?php echo $post['id']; ?>" name="id" />
-        </form>
+        
     </div>
 <?php
     }

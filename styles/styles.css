@@ -62,3 +62,6 @@ a {
 .sidebar-5-links {
     display: block;
 }
+.deletePost {
+    padding-bottom: 2rem;
+}

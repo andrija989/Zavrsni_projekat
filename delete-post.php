@@ -9,6 +9,6 @@
         $statementDelete->execute();
         $statementDelete->setFetchMode(PDO::FETCH_ASSOC);
     
-    header("Location: http://localhost/Zavrsni_projekat/index.php");
+    header("Location: http://localhost:8080/index.php");
     
 ?>

@@ -46,6 +46,19 @@
         <h2 class="blog-post-title"><a href="single-post.php?post_id=<?php echo($singlePost['id']) ?>"><?php echo($singlePost['title']) ?></a></h2>
         <p class="blog-post-meta"><?php echo($singlePost['created_at']) ?> by <?php echo($singlePost['author']) ?></p>
         <p><?php echo($singlePost['body']) ?></p>
+        <form class="deletePost" method="GET" action="delete-post.php" name="deletePostForm">
+                <input class="btn btn-default" type="submit" value="Delete post" id="delete-post" >
+                <input type="hidden" value="<?php echo $singlePost['id']; ?>" name="id" />
+        </form>
+        <script>
+            document.getElementById('delete-post').addEventListener("click", function(event){
+            event.preventDefault();
+            if(window.confirm("Do you want to delete this post???")) {
+                document.deletePostForm.submit();
+            }
+            });
+        </script>
+
         
         <div class="comments">
             <h3>Insert Comment</h3>
