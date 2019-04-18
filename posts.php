@@ -1,17 +1,5 @@
 <?php
-    $servername = "127.0.0.1";
-    $username = "root";
-    $password = "vivify";
-    $dbname = "blog";
-
-    try {
-        $connection = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }
-    catch(PDOException $e)
-    {
-        echo $e->getMessage();
-    }
+    include "db.php";
 ?>
 
 <?php
@@ -38,6 +26,10 @@
         <h2 class="blog-post-title"><a class="a-index" href="single-post.php?post_id=<?php echo($post['id']) ?>"><?php echo($post['title']) ?></a></h2>
         <p class="blog-post-meta"><?php echo($post['created_at']) ?> by <?php echo($post['author']) ?></p>
         <p><?php echo($post['body']) ?></p>
+        <form method="GET" action="delete-post.php" >
+                <input class="btn btn-default" type="submit" value="Delete post" >
+                <input type="hidden" value="<?php echo $post['id']; ?>" name="id" />
+        </form>
     </div>
 <?php
     }

@@ -1,18 +1,5 @@
 <?php
-    $servername = "127.0.0.1";
-    $username = "root";
-    $password = "vivify";
-    $dbname = "blog";
-
-    try {
-        $connection = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        // set the PDO error mode to exception
-        $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }
-    catch(PDOException $e)
-    {
-        echo $e->getMessage();
-    }
+    include "db.php";
 ?>
 
 <!doctype html>
@@ -40,17 +27,17 @@
 
     <div class="row">
     <?php
-                if (isset($_GET['post_id'])) {
+        if (isset($_GET['post_id'])) {
 
-                    $sql = "SELECT id, title, body, author, created_at FROM posts WHERE posts.id = {$_GET['post_id']}";
-                    $statement = $connection->prepare($sql);
+        $sql = "SELECT id, title, body, author, created_at FROM posts WHERE posts.id = {$_GET['post_id']}";
+        $statement = $connection->prepare($sql);
 
-                    $statement->execute();
+        $statement->execute();
 
-                    $statement->setFetchMode(PDO::FETCH_ASSOC);
+        $statement->setFetchMode(PDO::FETCH_ASSOC);
 
-                    $singlePost = $statement->fetch(); 
-                }
+        $singlePost = $statement->fetch(); 
+        }
 
                     
 
